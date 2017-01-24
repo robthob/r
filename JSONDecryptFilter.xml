@@ -1,0 +1,13 @@
+<entityStoreData>
+	<entityType name="JSONDecryptFilter" extends="Filter">
+
+		<!-- Name of Filter class that encapsulates this config entity -->
+		<constant name="class" type="string"
+			value="com.cts.ipm.axway.custom.filter.jsondecrypt.JSONDecryptFilter" />
+
+		<!-- List of config params, their types, and their default values -->
+		<field name="certLoc" type="string" cardinality="1" default=""/>
+		<field name="certAlias" type="string" cardinality="1" default=""/>	
+		<field name="certPass" type="string" cardinality="1" default=""/>				
+	</entityType>
+</entityStoreData>

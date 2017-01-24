@@ -1,0 +1,6 @@
+<typeSet>
+   <!-- JSONEncryptFilter TypeDoc -->
+   <typedoc file="JSONEncryptFilter.xml"/>
+   <!-- JSONEncryptFilter TypeDoc -->
+   <typedoc file="JSONDecryptFilter.xml"/>
+</typeSet>

@@ -1,0 +1,11 @@
+<entityStoreData>
+	<entityType name="JSONEncryptFilter" extends="Filter">
+
+		<!-- Name of Filter class that encapsulates this config entity -->
+		<constant name="class" type="string"
+			value="com.cts.ipm.axway.custom.filter.jsonencrypt.JSONEncryptFilter" />
+
+		<!-- List of config params, their types, and their default values -->
+		<field name="cerLoc" type="string" cardinality="1" default="a"/>	
+	</entityType>
+</entityStoreData>
