@@ -38,7 +38,6 @@
 		<type name="Reflector" version="0"/>
 		<type name="RootChild" version="0"/>
 		<type name="SaveToFileFilter" version="2"/>
-		<type name="SetAttributeFilter" version="0"/>
 		<type name="SetHTTPStatusCode" version="0"/>
 	</typeVersions>
 	<realizedTypes><![CDATA[
@@ -151,16 +150,6 @@
       <field cardinality="1" default="SERVICE" name="logMaskType" type="string"/>
       <field cardinality="*" name="classloader" type="^ClassLoader"/>
     </entityType>
-<entityType xmlns="http://www.vordel.com/2005/06/24/entityStore" extends="Filter" name="SetAttributeFilter">
-        <constant name="_version" type="integer" value="0"/>
-  
-    <!-- Name of the Filter class that encapsulates this configuration entity -->
-    <constant name="class" type="string" value="com.vordel.circuit.attribute.SetAttributeFilter"/>
-    
-    <!-- List of the configuration parameters, their types, and their default values -->
-    <field cardinality="1" default="" name="messageAttribute" type="string"/>	
-    <field cardinality="1" default="" name="attributeValue" type="string"/>	
-  </entityType>
 <entityType xmlns="http://www.vordel.com/2005/06/24/entityStore" extends="Filter" name="SaveToFileFilter">
 		<constant name="_version" type="integer" value="2"/>
 		<constant name="class" type="string" value="com.vordel.circuit.file.SaveToFileFilter"/>
@@ -355,32 +344,6 @@
 	<fval name="maxNumberFiles"><value>500</value></fval>
 	<fval name="name"><value>Persistence Details</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SaveToFileFilter">
-	<key type='FilterCircuit'>
-		<id field='name' value='API Promotion'/>
-	</key>
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">
-		<key type='CategoryGroup'>
-			<id field='name' value='Filter Categories'/>
-			<key type='Category'>
-				<id field='name' value='miscellaneous'/>
-			</key>
-		</key>
-	</value></fval>
-	<fval name="directory"><value>/root/Documents</value></fval>
-	<fval name="fileName"><value>Test.json</value></fval>
-	<fval name="includeHeaders"><value>0</value></fval>
-	<fval name="includeRequestLine"><value>0</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="maxFileSize"><value>1000</value></fval>
-	<fval name="maxNumberFiles"><value>500</value></fval>
-	<fval name="name"><value>Save to File</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JavaScriptFilter">
 	<key type='FilterCircuit'>
 		<id field='name' value='API Promotion'/>
@@ -396,7 +359,7 @@
 	</value></fval>
 	<fval name="consumedProperties"></fval>
 	<fval name="engineName"><value>groovy</value></fval>
-	<fval name="generatedProperties"><value>data.base64</value></fval>
+	<fval name="generatedProperties"><value>data.uri</value></fval>
 	<fval name="logFailure"><value>Failed script filter</value></fval>
 	<fval name="logFatal"><value>Error while attempt to run script filter. Error: ${circuit.exception}</value></fval>
 	<fval name="logMask"><value>2</value></fval>
@@ -413,29 +376,6 @@
 			</key>
 		</key>
 	</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetAttributeFilter">
-	<key type='FilterCircuit'>
-		<id field='name' value='API Promotion'/>
-	</key>
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="attributeValue"><value>${content.body}</value></fval>
-	<fval name="category"><value contentType="reference">
-		<key type='CategoryGroup'>
-			<id field='name' value='Filter Categories'/>
-			<key type='Category'>
-				<id field='name' value='miscellaneous'/>
-			</key>
-		</key>
-	</value></fval>
-	<fval name="logFailure"><value>Failed to set the attribute value</value></fval>
-	<fval name="logFatal"><value>Error while setting the attribute value. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Set the attribute value</value></fval>
-	<fval name="messageAttribute"><value>api.promotion</value></fval>
-	<fval name="name"><value>Set Attribute Filter{2}</value></fval>
-	<fval name="successNode"><value contentType="reference">-1</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Reflector">
 	<key type='FilterCircuit'>
